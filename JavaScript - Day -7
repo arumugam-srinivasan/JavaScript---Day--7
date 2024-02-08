@@ -1,0 +1,44 @@
+To get all the countries from the Asia continent/region using the Filter function:
+const countries = await (await fetch('https://restcountries.com/v3.1/all')).json();
+const asiaCountries = countries.filter(country => country.region === 'Asia');
+console.log(asiaCountries);
+
+To get all the countries with a population of less than 2 lakhs (200,000) using the Filter function:
+const countries = await (await fetch('https://restcountries.com/v3.1/all')).json();
+const countriesWithPopulationLessThan2Lakhs = countries.filter(country => country.population < 200000);
+console.log(countriesWithPopulationLessThan2Lakhs);
+
+To print the name, capital, and flag of each country using the forEach function:
+const countries = await (await fetch('https://restcountries.com/v3.1/all')).json();
+countries.forEach(country => {
+  console.log(`Name: ${country.name.common}`);
+  console.log(`Capital: ${country.capital ? country.capital[0] : 'N/A'}`);
+  console.log(`Flag: ${country.flag}`);
+  console.log('--------------------');
+});
+
+To print the total population of countries using the reduce function:
+const countries = await (await fetch('https://restcountries.com/v3.1/all')).json();
+const totalPopulation = countries.reduce((total, country) => total + country.population, 0);
+console.log(`Total population: ${totalPopulation}`);
+
+
+To print the country that uses US dollars as currency:
+const countries = await (await fetch('https://restcountries.com/v3.1/all')).json();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
